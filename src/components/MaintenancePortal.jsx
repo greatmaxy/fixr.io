@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import MachineSearch from './MachineSearch';
 import IssuesPage from './IssuesPage';
+import DowntimeAnalyticsDashboard from './DowntimeAnalyticsDashboard';
 
 const MaintenancePortal = () => {
   const [activeTab, setActiveTab] = useState('qa');
@@ -90,6 +91,7 @@ const MaintenancePortal = () => {
           <TabButton id="machines" icon={Camera} label="Machine Profiles" />
           <TabButton id="kb" icon={BookIcon} label="Knowledge Base" />
           <TabButton id="issues" icon={IssueIcon} label="Issues" />
+          <TabButton id="analytics" icon={IssueIcon} label="Analytics" />
         </nav>
       </div>
 
@@ -214,6 +216,12 @@ const MaintenancePortal = () => {
                         <div className="">
                         <IssuesPage/>
                         </div>
+            )}
+
+            {activeTab === 'analytics' && (
+            <div className="">
+            <DowntimeAnalyticsDashboard/>
+            </div>
             )}
 
           {activeTab === 'kb' && (
