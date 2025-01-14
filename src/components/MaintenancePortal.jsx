@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import MachineSearch from './MachineSearch';
 import IssuesPage from './IssuesPage';
+import ForumPage from './ForumsPage';
 import DowntimeAnalyticsDashboard from './DowntimeAnalyticsDashboard';
 
 const MaintenancePortal = () => {
@@ -118,91 +119,7 @@ const MaintenancePortal = () => {
         {/* Content Area */}
         <main className="p-6">
           {activeTab === 'qa' && (
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Recent Questions</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="p-4 border rounded-lg hover:bg-gray-50">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-medium">Hydraulic pressure loss on Machine #1234</h3>
-                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">
-                          Pending Solution
-                        </span>
-                      </div>
-                      <div className="mt-2 text-sm text-gray-600">
-                        <span className="mr-4">Plant: North Wing</span>
-                        <span>Category: Hydraulics</span>
-                      </div>
-                    </div>
-                    <div className="p-4 border rounded-lg hover:bg-gray-50">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-medium">Bearing replacement procedure for Model XYZ</h3>
-                        <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                          Solved
-                        </span>
-                      </div>
-                      <div className="mt-2 text-sm text-gray-600">
-                        <span className="mr-4">Machine: XYZ-789</span>
-                        <span>Category: Maintenance</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <div className="grid grid-cols-2 gap-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Recurring Issues</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <div className="flex items-center">
-                          <AlertIcon className="w-5 h-5 text-red-500 mr-2" />
-                          <span>Error Code E-123</span>
-                        </div>
-                        <span className="text-sm text-gray-500">12 occurrences</span>
-                      </div>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <div className="flex items-center">
-                          <ClockIcon className="w-5 h-5 text-orange-500 mr-2" />
-                          <span>Calibration Drift</span>
-                        </div>
-                        <span className="text-sm text-gray-500">8 occurrences</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Recent Solutions</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <div className="flex items-center">
-                          <CheckIcon className="w-5 h-5 text-green-500 mr-2" />
-                          <span>Updated bearing replacement guide</span>
-                        </div>
-                        <span className="text-sm text-gray-500">2h ago</span>
-                      </div>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <div className="flex items-center">
-                          <CheckIcon className="w-5 h-5 text-green-500 mr-2" />
-                          <span>New calibration procedure</span>
-                        </div>
-                        <span className="text-sm text-gray-500">1d ago</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+            <ForumPage/>
           )}
 
           {activeTab === 'machines' && (
