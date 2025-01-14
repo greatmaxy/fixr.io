@@ -103,7 +103,7 @@ const HomePage = () => {
     { name: 'Issues', icon: AlertCircle, id: 'issues' },
     { name: 'Forum', icon: MessageSquare, id: 'forum' },
     { name: 'Analytics', icon: BarChart, id: 'analytics' },
-    { name: 'Inventory', icon: Boxes, id: 'inventory' },
+    { name: 'Spare Parts', icon: Boxes, id: 'inventory' },
   ];
 
   const renderContent = () => {
@@ -170,6 +170,7 @@ const HomePage = () => {
       {/* Main Content */}
       <div className="pl-64">
         {/* Top Header */}
+        {currentPage === "dashboard" && (
         <header className="h-16 bg-white border-b px-8 flex items-center justify-between">
           <div className="flex items-center">
             <h2 className="text-lg font-semibold">
@@ -186,6 +187,8 @@ const HomePage = () => {
             </Button>
           </div>
         </header>
+        )}
+
 
         {/* Dynamic Content Area */}
         <main className="h-[calc(100vh-4rem)] overflow-auto">
