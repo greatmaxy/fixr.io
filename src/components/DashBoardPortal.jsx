@@ -7,13 +7,15 @@ import {
   BarChart,
   Bell,
   Plus,
-  Home
+  Home,
+  Boxes
 } from 'lucide-react';
 
 import MachineSearch from './MachineSearch';
 import IssuePage from './IssuesPage';
 import ForumsPage from './ForumsPage';
 import DowntimeAnalyticsDashboard from './DowntimeAnalyticsDashboard';
+import SparePartsInventory from './SparePartInventory';
 
 // Dashboard Content Component
 const DashboardContent = () => {
@@ -101,6 +103,7 @@ const HomePage = () => {
     { name: 'Issues', icon: AlertCircle, id: 'issues' },
     { name: 'Forum', icon: MessageSquare, id: 'forum' },
     { name: 'Analytics', icon: BarChart, id: 'analytics' },
+    { name: 'Inventory', icon: Boxes, id: 'inventory' },
   ];
 
   const renderContent = () => {
@@ -113,6 +116,8 @@ const HomePage = () => {
         return <ForumsPage />;
       case 'analytics':
         return <DowntimeAnalyticsDashboard />;
+      case 'inventory':
+          return <SparePartsInventory />;
       default:
         return <DashboardContent />;
     }
